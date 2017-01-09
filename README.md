@@ -26,7 +26,7 @@ PLEASE DON'T ADD V2 ON YOUR CONFIG FILE.*
 You're going to need to install a few dependencies before using
 PTHBetter.
 
-First and foremost, you will need Python 2.7 or newer.
+First and foremost, you will need Python 2.7.
 
 Once you've got Python installed, you will need a few modules: mechanize,
 mutagen, and requests. Try this as sudo/root:
@@ -86,9 +86,9 @@ or
 And you will receive a notification stating that you should edit the
 configuration file `~/.pthbetter/config` (if you're lucky).
 
-If you have an error, try to setup chmod 777 on all files, even may be directory
+If you have an error, try setting the executable bit on pthbetter.
 
-     $ chmod 777 *
+     $ chmod +x pthbetter
 
 Configuration
 -------------
