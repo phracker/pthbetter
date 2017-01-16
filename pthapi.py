@@ -83,7 +83,7 @@ class PthAPI:
         loginpage = 'https://passtheheadphones.me/login.php'
         data = {'username': self.username,
                 'password': self.password}
-        r = self.session.post(loginpage, data=data)
+        r = self.session.post(loginpage, data=data, verify=False)
         if r.status_code != 200:
             raise LoginException
         accountinfo = self.request('index')
