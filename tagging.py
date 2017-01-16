@@ -51,6 +51,13 @@ def valid_fractional_tag(value):
     else:
         return False
 
+def valid_alphanumeric_track_tag(value):
+	# alphanumeric (A1, B1, B2)
+	if re.match(r"""^[A-Z]\d+(\/(\d+))?$""", value):
+		return True
+	else:
+		return False
+
 def scrub_tag(name, value):
     """Strip whitespace (and other common problems) from tag values.
 
@@ -90,7 +97,7 @@ def check_tags(filename, check_tracknumber_format=True):
 
     if check_tracknumber_format:
         tracknumber = info['tracknumber'][0]
-        if not valid_fractional_tag(tracknumber):
+        if not (valid_fractional_tag(tracknumber) or valid_alphanumeric_track_tag(tracknumber)):
             return (False, '"%s" has a malformed tracknumber tag ("%s")' % (filename, tracknumber))
 
     return (True, None)
