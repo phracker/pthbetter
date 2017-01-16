@@ -73,7 +73,7 @@ class PthAPI:
         self.passkey = None
         self.userid = None
         self.userclass = None
-        self.tracker = "https://please.passtheheadphones.me/"
+        self.tracker = "https://flacsfor.me/"
         self.last_request = time.time()
         self.rate_limit = 2.0 # seconds between requests
         self._login()
