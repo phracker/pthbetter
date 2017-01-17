@@ -8,6 +8,8 @@ import mechanize
 import HTMLParser
 from cStringIO import StringIO
 
+requests.packages.urllib3.disable_warnings()
+
 headers = {
     'Connection': 'keep-alive',
     'Cache-Control': 'max-age=0',
