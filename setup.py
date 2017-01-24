@@ -32,6 +32,6 @@ setup(
     install_requires = [
         'mutagen',
         'mechanize',
-        'requests'
+        'requests[security]'
     ]
 )

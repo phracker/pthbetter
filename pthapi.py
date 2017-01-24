@@ -8,8 +8,6 @@ import mechanize
 import HTMLParser
 from cStringIO import StringIO
 
-requests.packages.urllib3.disable_warnings()
-
 headers = {
     'Connection': 'keep-alive',
     'Cache-Control': 'max-age=0',
@@ -85,7 +83,7 @@ class PthAPI:
         loginpage = 'https://passtheheadphones.me/login.php'
         data = {'username': self.username,
                 'password': self.password}
-        r = self.session.post(loginpage, data=data, verify=False)
+        r = self.session.post(loginpage, data=data)
         if r.status_code != 200:
             raise LoginException
         accountinfo = self.request('index')
