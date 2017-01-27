@@ -230,7 +230,7 @@ def get_transcode_dir(flac_dir, output_dir, output_format, resample):
     tags = ['FLAC - LOSSLESS', 'FLAC LOSSLESS', 'LOSSLESS', '24FLAC', 'FLAC']
     found = False
     for t in tags:
-        if t in flac_dir.upper():
+        if t in transcode_dir.upper():
             transcode_dir = re.sub(re.compile(t, re.I), output_format, transcode_dir)
             found = True
     if not found:
